@@ -1,7 +1,9 @@
 class CollectionsController < ApplicationController
 
-    def index
-    end
+  def index
+    collections = Collection.all
+    render json: collections
+  end
   
     def create
       puts
