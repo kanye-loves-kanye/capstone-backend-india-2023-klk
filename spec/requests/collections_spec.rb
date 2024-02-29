@@ -10,7 +10,21 @@ RSpec.describe "Collections", type: :request do
     typeOfYe: 'Type1',
     )
 }
+  describe "GET /index" do
+    it 'gets a list of collections' do
+      collection = user.collections.create(
+        item: 'item1',
+        size: 'Small'
+      )
+      get '/collections'
 
+      collection = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(collection.first['item']).to eq('item1')
+      expect(collection.first['size']).to eq('Small')
+    end
+  end
+  
   describe "POST /create" do
     it 'creates a new collection' do 
       collection_params = {
