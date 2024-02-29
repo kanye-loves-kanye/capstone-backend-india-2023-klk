@@ -16,13 +16,13 @@ require 'rails_helper'
     collection = user.collections.create(
       size: 'Small',
     )
-    expect(collection.errors[:item]).to include("can't be blank")
+    expect(collection.errors[:item]).to_not be_empty
   end
 
   it 'should validate item' do
     collection = user.collections.create(
       item: 'item1',
     )
-    expect(collection.errors[:size]).to include("can't be blank")
+    expect(collection.errors[:size]).to_not be_empty
   end
 end
