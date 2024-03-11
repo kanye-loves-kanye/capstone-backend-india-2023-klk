@@ -7,7 +7,6 @@ class CollectionsController < ApplicationController
   
     def create
       collection = Collection.create(collection_params)
-      p collection
       if collection.valid?
         render json: collection
       else
