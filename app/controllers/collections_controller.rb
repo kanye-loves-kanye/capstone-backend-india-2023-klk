@@ -6,9 +6,7 @@ class CollectionsController < ApplicationController
   end
   
     def create
-      puts
       collection = Collection.create(collection_params)
-
       if collection.valid?
         render json: collection
       else
@@ -18,7 +16,7 @@ class CollectionsController < ApplicationController
 
       private
     def collection_params
-      params.require(:collection).permit(:item, :size, :user_id)
+      params.require(:collection).permit(:item, :caption, :user_id)
     end
   
   
