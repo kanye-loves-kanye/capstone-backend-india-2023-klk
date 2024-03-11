@@ -6,3 +6,4 @@ User.create(username: 'user2', email: 'user2@example.com', password: 'password2'
 Collection.create(user_id: 1, item: 'item1', size: 'Small')
 Collection.create(user_id: 1, item: 'item2', size: 'Medium')
 Collection.create(user_id: 2, item: 'item3', size: 'Large')
+
